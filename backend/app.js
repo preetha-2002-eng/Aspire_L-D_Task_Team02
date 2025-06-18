@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 const dotenv = require("dotenv");
-mongoose.connect("mongodb://localhost:27017/test");
+// mongoose.connect("mongodb://localhost:27017/test");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();

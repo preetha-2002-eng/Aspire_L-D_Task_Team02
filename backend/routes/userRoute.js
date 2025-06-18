@@ -49,4 +49,15 @@ var upload = multer({ storage: storage });
 
 router.post('/importUser', upload.single('file'), importUser);
 
+const userModel = require('../models/User');
+
+router.get('/users', async (req, res) => {
+  try {
+    const users = await userModel.find();
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching users', error: err });
+  }
+});
+
 module.exports = router; // ✅ export the actual router
